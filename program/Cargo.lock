@@ -9,7 +9,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247"
 
 [[package]]
-name = "attested-image-program"
+name = "attested-images-program"
 version = "0.1.0"
 dependencies = [
  "sp1-zkvm",
@@ -385,7 +385,7 @@ dependencies = [
 [[package]]
 name = "sp1-precompiles"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git#5fa44d6589a4612fda531a119dad030e88f84015"
+source = "git+https://github.com/succinctlabs/sp1.git#e91c38c9c4d34294f17ea4b6ee0a8f7d94e1e33b"
 dependencies = [
  "anyhow",
  "bincode",
@@ -399,7 +399,7 @@ dependencies = [
 [[package]]
 name = "sp1-zkvm"
 version = "0.1.0"
-source = "git+https://github.com/succinctlabs/sp1.git#5fa44d6589a4612fda531a119dad030e88f84015"
+source = "git+https://github.com/succinctlabs/sp1.git#e91c38c9c4d34294f17ea4b6ee0a8f7d94e1e33b"
 dependencies = [
  "bincode",
  "cfg-if",
@@ -429,9 +429,9 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
 
 [[package]]
 name = "syn"
-version = "2.0.55"
+version = "2.0.53"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "002a1b3dbf967edfafc32655d0f377ab0bb7b994aa1d32c8cc7e9b8bf3ebb8f0"
+checksum = "7383cd0e49fff4b6b90ca5670bfd3e9d6a733b3f90c686605aa7eec8c4996032"
 dependencies = [
  "proc-macro2",
  "quote",

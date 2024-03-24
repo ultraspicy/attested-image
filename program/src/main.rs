@@ -4,19 +4,26 @@
 sp1_zkvm::entrypoint!(main);
 
 pub fn main() {
-    // NOTE: values of n larger than 186 will overflow the u128 type,
-    // resulting in output that doesn't match fibonacci sequence.
-    // However, the resulting proof will still be valid!
-    let n = sp1_zkvm::io::read::<u32>();
-    let mut a: u128 = 0;
-    let mut b: u128 = 1;
-    let mut sum: u128;
-    for _ in 1..n {
-        sum = a + b;
-        a = b;
-        b = sum;
+    let len = sp1_zkvm::io::read::<u8>();
+
+    let mut vec1 = Vec::new();
+    for _i in 0..len {
+        let pixel = sp1_zkvm::io::read::<u8>();
+        vec1.push(pixel)
     }
 
-    sp1_zkvm::io::write(&a);
-    sp1_zkvm::io::write(&b);
+    let mut vec2 = Vec::new();
+    for _i in 0..len {
+        let pixel = sp1_zkvm::io::read::<u8>();
+        vec2.push(pixel)
+    }
+
+    let sum_of_diffs_squared: u8 = vec1
+        .iter()
+        .zip(vec2.iter()) // Combine the two vectors
+        .map(|(a, b)| (a - b).pow(2)) // Calculate the difference squared for each pair
+        .sum();
+
+    sp1_zkvm::io::write(&sum_of_diffs_squared);
+  
 }
