@@ -24,6 +24,5 @@ pub fn main() {
         .map(|(a, b)| (a - b).pow(2)) // Calculate the difference squared for each pair
         .sum();
 
-    sp1_zkvm::io::write(&sum_of_diffs_squared);
-  
+    sp1_zkvm::io::write(&sum_of_diffs_squared);  
 }

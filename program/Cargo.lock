@@ -12,6 +12,8 @@ checksum = "0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247"
 name = "attested-images-program"
 version = "0.1.0"
 dependencies = [
+ "rand",
+ "shared",
  "sp1-zkvm",
 ]
 
@@ -371,6 +373,10 @@ dependencies = [
  "cpufeatures",
  "digest",
 ]
+
+[[package]]
+name = "shared"
+version = "0.1.0"
 
 [[package]]
 name = "signature"
