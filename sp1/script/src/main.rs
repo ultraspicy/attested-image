@@ -3,7 +3,7 @@
 use sp1_core::{utils, SP1Prover, SP1Stdin, SP1Verifier};
 
 const ELF: &[u8] = include_bytes!("../../program/elf/riscv32im-succinct-zkvm-elf");
-const DATA: &[u8] = include_bytes!("./../random_u8_numbers.dat");
+const DATA: &[u8] = include_bytes!("../test.dat");
 
 fn main() {
     utils::setup_tracer();
@@ -11,7 +11,6 @@ fn main() {
     let input = DATA;
     println!("=================================");
     println!("len = {}", input.len());
-    println!("len = {}", input[0]);
 
     let mut stdin = SP1Stdin::new();
     stdin.write_slice(input);
@@ -20,7 +19,6 @@ fn main() {
 
     // Read output.
     let ret = proof.stdout.read::<u8>();
-
     println!("ret: {}", ret);
     // Verify proof.
     SP1Verifier::verify(ELF, &proof).expect("verification failed");
