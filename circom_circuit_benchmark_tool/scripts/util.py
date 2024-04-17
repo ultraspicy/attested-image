@@ -18,7 +18,7 @@ def measure_command(command, time = True, memory = True):
 
     :return: A tuple containing the elapsed time (if time=True) and memory usage (if memory=True).
     """
-    command = f'/usr/bin/time -p -f "%e %M" {command} > /dev/null'
+    command = f'/usr/bin/time {command} > /dev/null'
     if memory:
         init_swap_used = psutil.swap_memory().used
         max_swap_used = init_swap_used
@@ -33,6 +33,12 @@ def measure_command(command, time = True, memory = True):
             max_swap_used = max(max_swap_used, psutil.swap_memory().used)
 
     command_output = process.communicate()[1].decode('utf-8')
+    print("======= command start =======")
+    print(command)
+    print("======= command end =======")
+    print("======= command_output start =======")
+    print(command_output)
+    print("======= command_output end =======")
     t,mem = command_output.split('\n')[0].split(' ')
     t = float(t)
 
@@ -55,6 +61,8 @@ def generate_circuit(info, circuit_template, id = None):
 
     """
     out_circuit = circuit_template.split('/')[-1].split('.')[0]
+    print("=============")
+    print(out_circuit)
     os.makedirs('circuits/benchmark',exist_ok=True)
 
     with open(circuit_template, 'r') as infile:

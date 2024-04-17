@@ -2,11 +2,11 @@
 
 from util import extract_contraints, generate_circuit, generate_input, measure_command
 
-def test_circuit(circuit_name, input_path,pot_path,verbose=True,time = True, memory = True):
-    r1cs_path = 'output/compiled_circuit/compiled_{}/{}.r1cs'
-    t_c,m_c = measure_command(f'./compile_circuit.sh ./circuits/benchmark/{circuit_name}.circom {input_path} ',time,memory)
+def benchmark_circuit(circuit_name, input_path, pot_path, verbose=True, time = True, memory = True):
+    t_c, m_c = measure_command(f'sh compile_circuit.sh ./../circuits/{circuit_name}/{circuit_name}.circom {input_path} --nodejs',time,memory)
     if verbose:
         print(f'[{circuit_name}] Compile Circuit: {"" if t_c is None else f"{t_c} seconds"} {"" if m_c is None else f"{m_c} KB"}')
+    # r1cs_path = 'output/compiled_circuit/compiled_{}/{}.r1cs'
     # constraints = extract_contraints(r1cs_path.format(circuit_name,circuit_name))
     # if verbose:
     #     print(f'[{circuit_name}] Constraints: {constraints}')
@@ -36,15 +36,15 @@ def test_circuit(circuit_name, input_path,pot_path,verbose=True,time = True, mem
 
 
 if __name__ == '__main__':
-    # test sha256 circuit given the size of an image as input
+    # test circuit given the size of an image as input
     TIME, MEMORY = True, True
-    POT = './powersoftau/28pot.ptau'
-    NUM = 50
+    POT = './../circuits/diff_square_sum/powersoftau/28pot.ptau'
+    # NUM = 50
 
-    circuit_name = f'sha256_bytes'
-    generate_circuit({'NUM':NUM},f'./circuits/base/{circuit_name}.circom',id=NUM)
-    generate_input(f'./input/input_{NUM}.json',NUM)
-    measures = test_circuit(f'{circuit_name}_{NUM}',f'./input/input_{NUM}.json',POT,time=TIME,memory=MEMORY)
+    circuit_name = f'diff_square_sum'
+    # generate_circuit({'NUM':NUM},f'./circuits/base/{circuit_name}.circom',id=NUM)
+    # generate_input(f'./input/input_{NUM}.json',NUM)
+    measures = benchmark_circuit(f'{circuit_name}',f'./../circuits/{circuit_name}/input.json', POT, time=TIME, memory=MEMORY)
 
     
     
