@@ -11,19 +11,45 @@ CIRCOMLIB_PATH=/home/${USER}/node_modules
 filename=$(basename -- "$1")
 CIRCOM_FILENAME=${filename%.*}
 
-echo "Compiling circuit [${CIRCOM_FILENAME}] ..."
-
 # Create the output directory if it doesn't exist
 mkdir -p output/compiled_circuit > /dev/null
 mkdir -p output/compiled_circuit/compiled_${CIRCOM_FILENAME} > /dev/null
 
 # compile the circuits
+echo "==================== Compiling circuit ${CIRCOM_FILENAME} ... ===================="
 /usr/bin/time circom ${1} --r1cs --wasm --sym --c --output output/compiled_circuit/compiled_${CIRCOM_FILENAME} -l ${CIRCOMLIB_PATH} -l ./circuits/base
+#echo "Circuit compiled in output/compiled_circuit/compiled_${CIRCOM_FILENAME}"
 
 # Generate the witness
-# if [[ $* == *--nodejs* ]]; then
-echo "Compiling with [NodeJS] ..."
+echo "==================== Generating witness ...  ===================="
 cd output/compiled_circuit/compiled_${CIRCOM_FILENAME}/${CIRCOM_FILENAME}_js
-/usr/bin/time node generate_witness.js ${CIRCOM_FILENAME}.wasm ../../../../../circuits/${CIRCOM_FILENAME}/${2} ../${CIRCOM_FILENAME}_witness.wtns
+/usr/bin/time node generate_witness.js ${CIRCOM_FILENAME}.wasm ../../../../../circuits/${CIRCOM_FILENAME}/${2} ${CIRCOM_FILENAME}_witness.wtns
 
-echo "Witness generated [${CIRCOM_FILENAME}_witness.wtns]"
+#echo "Witness generated [${CIRCOM_FILENAME}_witness.wtns]"
+
+# start a new "powers of tau" ceremony
+echo "==================== Start a new "powers of tau" ceremony: ...  ===================="
+cd ..
+/usr/bin/time snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
+
+echo "==================== contribute to the ceremony: ...  ===================="
+/usr/bin/time echo "cs251" | snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
+
+echo "==================== PHASE2 ...  ===================="
+/usr/bin/time snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
+
+echo "==================== generate verification file  ...  ===================="
+/usr/bin/time snarkjs groth16 setup ${CIRCOM_FILENAME}.r1cs pot12_final.ptau ${CIRCOM_FILENAME}_0000.zkey
+
+echo ""==================== Contribute to the phase 2 of the ceremony ... "===================="
+/usr/bin/time echo "cs251" | snarkjs zkey contribute ${CIRCOM_FILENAME}_0000.zkey ${CIRCOM_FILENAME}_0001.zkey --name="cs251" -v
+
+echo "==================== Export the verification key ===================="
+/usr/bin/time snarkjs zkey export verificationkey ${CIRCOM_FILENAME}_0001.zkey verification_key.json
+
+echo "==================== Generating a Proof ===================="
+pwd
+/usr/bin/time snarkjs groth16 prove ${CIRCOM_FILENAME}_0001.zkey ./${CIRCOM_FILENAME}_js/${CIRCOM_FILENAME}_witness.wtns proof.json public.json
+
+echo "==================== Verifying a Proof ===================="
+/usr/bin/time snarkjs groth16 verify verification_key.json public.json proof.json
