@@ -1,0 +1,20 @@
+==================== Compiling circuit diff_square_sum ... ====================
+        0.14 real         0.08 user         0.02 sys
+==================== Generating witness ...  ====================
+        0.22 real         0.09 user         0.02 sys
+==================== Start a new powers of tau ceremony: ...  ====================
+        1.08 real         1.56 user         0.13 sys
+==================== contribute to the ceremony: ...  ====================
+        0.00 real         0.00 user         0.00 sys
+==================== PHASE2 ...  ====================
+       30.87 real       169.23 user         0.33 sys
+==================== generate verification file  ...  ====================
+        1.27 real         1.67 user         0.11 sys
+==================== Contribute to the phase 2 of the ceremony ... ====================
+        0.00 real         0.00 user         0.00 sys
+==================== Export the verification key ====================
+        0.93 real         1.32 user         0.10 sys
+==================== Generating a Proof ====================
+        0.96 real         1.41 user         0.11 sys
+==================== Verifying a Proof ====================
+        0.94 real         1.30 user         0.11 sys
