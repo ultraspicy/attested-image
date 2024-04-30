@@ -1,6 +1,6 @@
 import json
 
-def generate_json_file(length, filename='./../circuits/diff_square_sum/input_1M.json'):
+def generate_json_file(length, filename='./../circuits/diff_square_sum/input_10.json'):
     # Ensure length is a positive integer
     if length <= 0:
         print("Please provide a positive integer for length.")
@@ -19,4 +19,4 @@ def generate_json_file(length, filename='./../circuits/diff_square_sum/input_1M.
     print(f"File '{filename}' has been created with the data.")
 
 # Example usage
-generate_json_file(1000000)
+generate_json_file(10)

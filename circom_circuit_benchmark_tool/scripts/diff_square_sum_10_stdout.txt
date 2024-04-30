@@ -38,15 +38,15 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: processing: betaTauG1: 0/4096
 [36;22m[DEBUG] [39;1msnarkJS[0m: processing: betaTauG2: 0/1
 [32;22m[INFO]  [39;1msnarkJS[0m: Contribution Response Hash imported: 
-		4882f759 b9b64fb8 d0eb3c92 cd0a807b
-		0e7b7663 6dd00843 58decbfd ec25e06b
-		9c5f5e95 d24a77c5 57be2a00 063fdb13
-		f1e6a7c9 f0c18749 5f1d6d18 6284fe63
+		11c6040a 3b18140e 2f69ce28 8a31db4f
+		f19d907f f26fd744 d702ad74 c1bfe8fc
+		cbe2425a 6cc7ef21 df15ff6c 474769c0
+		78ba0969 220731e1 4c0677af 53bd79d2
 [32;22m[INFO]  [39;1msnarkJS[0m: Next Challenge Hash: 
-		61d7d8fc 8ff8a1ef 0c41e8fc 69d73003
-		b1375a58 7345c329 547a6f39 e85e92e7
-		e964dae5 416e4578 1d69d5da b6fa3cb8
-		8465c413 2810af0a e8a2aacd 2b94c0c9
+		80d5da42 946ac747 6d3ea809 618876b8
+		0ef20ee2 2a76769d e193a53d df737bfd
+		ca163581 4edb37a0 3c531077 04b323a8
+		d3b0da1f ad33e48c 5bed4201 0fbd9ef2
 [36;22m[DEBUG] [39;1msnarkJS[0m: Starting section: tauG1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 0 mix start: 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 0 mix end: 0/1
@@ -93,8 +93,8 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  6  join: 4/6
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 join  4/6  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 join  4/6  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 join  4/6  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 join  4/6  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 6 join  4/6  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  6  join: 5/6
@@ -115,14 +115,14 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 5/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  7  join: 5/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 join  5/7  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 7 join  5/7  2/4 0/1
@@ -146,14 +146,14 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  8  join: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 join  6/8  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 8 join  6/8  3/4 0/1
@@ -177,29 +177,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  9  join: 7/9
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  1/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  2/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  7/9  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  9  join: 8/9
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  8/9  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  8/9  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  8/9  1/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  8/9  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  8/9  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  9  join: 9/9
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 0/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 9 join  9/9  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 2/8
@@ -208,29 +208,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  10  join: 8/10
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  8/10  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  8/10  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  8/10  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  8/10  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  8/10  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  10  join: 9/10
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  9/10  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  9/10  2/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  9/10  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  9/10  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  9/10  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  10  join: 10/10
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  10/10  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  10/10  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  10/10  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  10/10  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 10 join  10/10  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 2/8
@@ -239,29 +239,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  11  join: 9/11
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  9/11  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  9/11  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  9/11  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  9/11  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  9/11  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  11  join: 10/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  1/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  2/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  1/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  10/11  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  11  join: 11/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  11/11  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  11/11  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  11/11  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 2/8
@@ -270,19 +270,19 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  12  join: 10/12
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  2/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  12  join: 11/12
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  11/12  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  11/12  2/2 1/2
@@ -290,8 +290,8 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  11/12  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  12  join: 12/12
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  12/12  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  12/12  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  12/12  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  12/12  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 12 join  12/12  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix start: 1/8
@@ -301,29 +301,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  13  join: 11/13
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  2/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  2/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  11/13  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  13  join: 12/13
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  2/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  1/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  12/13  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft  13  join: 13/13
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  13/13  1/1 3/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  13/13  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  13/13  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  13/13  1/1 2/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG1: fft 13 join  13/13  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: Starting section: tauG2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 0 mix start: 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 0 mix end: 0/1
@@ -365,15 +365,15 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  6  join: 4/6
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  4/6  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  4/6  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  4/6  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  4/6  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  4/6  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  6  join: 5/6
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  5/6  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 6 join  5/6  2/2 0/2
@@ -396,20 +396,20 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  7  join: 5/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  5/7  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  5/7  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  5/7  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  5/7  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  5/7  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  7  join: 6/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  6/7  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  6/7  2/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  6/7  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  6/7  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  6/7  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  7  join: 7/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  7/7  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 7 join  7/7  1/1 2/4
@@ -423,24 +423,24 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  8  join: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  6/8  1/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  6/8  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  6/8  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  6/8  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  6/8  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  8  join: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  1/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  1/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  7/8  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  8  join: 8/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  8/8  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 8 join  8/8  1/1 2/4
@@ -454,29 +454,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  9  join: 7/9
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  7/9  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  7/9  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  7/9  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  7/9  2/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  7/9  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  9  join: 8/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  8/9  2/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  8/9  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  8/9  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  8/9  2/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  8/9  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  9  join: 9/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  9/9  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  9/9  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  9/9  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  9/9  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 9 join  9/9  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 2/8
@@ -485,29 +485,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  10  join: 8/10
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  8/10  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  8/10  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  8/10  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  8/10  3/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  8/10  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  10  join: 9/10
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  1/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  1/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  9/10  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  10  join: 10/10
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 0/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 10 join  10/10  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 2/8
@@ -516,29 +516,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  11  join: 9/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  9/11  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  9/11  2/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  9/11  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  9/11  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  9/11  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  11  join: 10/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  10/11  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  10/11  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  10/11  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  10/11  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  10/11  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  11  join: 11/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 0/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 11 join  11/11  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix start: 2/8
@@ -548,26 +548,26 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix start: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 5/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  12  join: 10/12
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  10/12  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  10/12  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  10/12  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  12  join: 11/12
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  1/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  1/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  11/12  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft  12  join: 12/12
-[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  12/12  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  12/12  1/1 2/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  12/12  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  12/12  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: tauG2: fft 12 join  12/12  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: Starting section: alphaTauG1
@@ -594,8 +594,8 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 mix end: 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 mix end: 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  5  join: 4/5
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 join  4/5  1/2 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 join  4/5  2/2 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 join  4/5  1/2 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  5  join: 5/5
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 join  5/5  1/1 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 5 join  5/5  1/1 1/2
@@ -607,14 +607,14 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  6  join: 4/6
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 join  4/6  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 6 join  4/6  2/4 0/1
@@ -641,11 +641,11 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  7  join: 5/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 join  5/7  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 7 join  5/7  2/4 0/1
@@ -670,28 +670,28 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix start: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 5/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  8  join: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  6/8  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  6/8  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  6/8  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  6/8  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  8  join: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  7/8  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  7/8  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  7/8  1/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  7/8  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  7/8  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  8  join: 8/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  8/8  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  8/8  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  8/8  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  8/8  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 8 join  8/8  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 2/8
@@ -700,29 +700,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix start: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  9  join: 7/9
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  1/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  3/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  7/9  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  9  join: 8/9
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  8/9  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  8/9  1/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  8/9  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  8/9  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  8/9  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  9  join: 9/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  9/9  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  9/9  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  9/9  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  9/9  1/1 3/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 9 join  9/9  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 2/8
@@ -731,14 +731,14 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 5/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  10  join: 8/10
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  8/10  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  8/10  2/4 0/1
@@ -750,10 +750,10 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  9/10  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  9/10  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  10  join: 10/10
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 2/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 0/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 3/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 10 join  10/10  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 2/8
@@ -762,29 +762,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 5/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  11  join: 9/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  2/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  9/11  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  11  join: 10/11
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  10/11  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  10/11  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  10/11  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  10/11  2/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  10/11  2/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  11  join: 11/11
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 0/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 1/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 3/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 2/8
@@ -793,29 +793,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 2/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  12  join: 10/12
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  10/12  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  10/12  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  10/12  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  12  join: 11/12
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  2/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  1/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  2/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  11/12  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft  12  join: 12/12
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  12/12  1/1 1/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  12/12  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  12/12  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  12/12  1/1 0/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: alphaTauG1: fft 12 join  12/12  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: Starting section: betaTauG1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 0 mix start: 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 0 mix end: 0/1
@@ -856,11 +856,11 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  6  join: 4/6
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 join  4/6  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 6 join  4/6  2/4 0/1
@@ -887,11 +887,11 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  7  join: 5/7
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 join  5/7  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 7 join  5/7  2/4 0/1
@@ -916,28 +916,28 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix start: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  8  join: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  2/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  1/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  3/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  6/8  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  8  join: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  7/8  1/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  7/8  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  7/8  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  7/8  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  7/8  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  8  join: 8/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  8/8  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  8/8  1/1 1/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  8/8  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  8/8  1/1 2/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 8 join  8/8  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 2/8
@@ -946,18 +946,18 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 5/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 0/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 4/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 4/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 3/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  9  join: 7/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  7/9  1/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  7/9  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  7/9  3/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  7/9  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  7/9  4/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  9  join: 8/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  8/9  1/2 0/2
@@ -967,8 +967,8 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  9  join: 9/9
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  9/9  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  9/9  1/1 2/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  9/9  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  9/9  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 9 join  9/9  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 2/8
@@ -977,14 +977,14 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 1/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 6/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  10  join: 8/10
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  8/10  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  8/10  2/4 0/1
@@ -993,8 +993,8 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  10  join: 9/10
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  9/10  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  9/10  1/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  9/10  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  9/10  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  9/10  2/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  10  join: 10/10
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  10/10  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 10 join  10/10  1/1 2/4
@@ -1008,29 +1008,29 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 3/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  11  join: 9/11
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  9/11  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  9/11  2/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  9/11  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  9/11  4/4 0/1
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  9/11  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  11  join: 10/11
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  2/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  1/2 0/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  2/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  1/2 1/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  10/11  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  11  join: 11/11
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  11/11  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  11/11  1/1 3/4
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  11/11  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 11 join  11/11  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 0/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 2/8
@@ -1039,51 +1039,51 @@ Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Calculating 
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 6/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix start: 7/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 1/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 3/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 2/8
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 7/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 1/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 0/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 2/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 6/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 7/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 4/8
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 mix end: 5/8
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  12  join: 10/12
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  10/12  1/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  10/12  3/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  10/12  4/4 0/1
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  10/12  2/4 0/1
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  12  join: 11/12
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  11/12  1/2 1/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  11/12  2/2 1/2
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  11/12  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  11/12  2/2 0/2
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  11/12  1/2 0/2
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft  12  join: 12/12
-[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  12/12  1/1 0/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  12/12  1/1 2/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  12/12  1/1 3/4
 [36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  12/12  1/1 1/4
+[36;22m[DEBUG] [39;1msnarkJS[0m: betaTauG1: fft 12 join  12/12  1/1 0/4
 [32;22m[INFO]  [39;1msnarkJS[0m: Reading r1cs
 [32;22m[INFO]  [39;1msnarkJS[0m: Reading tauG1
 [32;22m[INFO]  [39;1msnarkJS[0m: Reading tauG2
 [32;22m[INFO]  [39;1msnarkJS[0m: Reading alphatauG1
 [32;22m[INFO]  [39;1msnarkJS[0m: Reading betatauG1
 [32;22m[INFO]  [39;1msnarkJS[0m: Circuit hash: 
-		2e9f6a27 ee014482 08f6e147 e169b93e
-		bb28393b fc5141ed 85e6be1b 463a7ca0
-		ac1a417b e0471464 3950598a 7882c132
-		2dd772ca adad9487 160d2121 2ae9f4e9
+		f9f8471c 8ab70738 064e51d4 e11b7dd2
+		4f461b92 729a9e96 09b18484 58b6826c
+		3b71d61e d614dc60 27877929 34a9a01d
+		bb39a11d 0e88cf94 55f17d22 c8bee1d0
 Enter a random text. (Entropy): [36;22m[DEBUG] [39;1msnarkJS[0m: Applying key: L Section: 0/29
 [36;22m[DEBUG] [39;1msnarkJS[0m: Applying key: H Section: 0/16
 [32;22m[INFO]  [39;1msnarkJS[0m: Circuit Hash: 
-		2e9f6a27 ee014482 08f6e147 e169b93e
-		bb28393b fc5141ed 85e6be1b 463a7ca0
-		ac1a417b e0471464 3950598a 7882c132
-		2dd772ca adad9487 160d2121 2ae9f4e9
+		f9f8471c 8ab70738 064e51d4 e11b7dd2
+		4f461b92 729a9e96 09b18484 58b6826c
+		3b71d61e d614dc60 27877929 34a9a01d
+		bb39a11d 0e88cf94 55f17d22 c8bee1d0
 [32;22m[INFO]  [39;1msnarkJS[0m: Contribution Hash: 
-		824020b0 64358b3b 1238bf8f 2ac84866
-		e6b1b165 0934b852 f96c76b6 4d6c0845
-		5c7a117e 3fe72dac 41e287ea dfbaa9d2
-		016ce3a7 410b550e 27d675b8 4dea15e7
+		29fb2c8c fe90f04e 95235f05 9202af9c
+		95f43fff ada42c57 9d7b22ab 4ef8a58d
+		1046cf8d e50d9957 81d3dd64 97276b6f
+		28a5fa9b 287317c1 144aab22 03fc8ef7
 [32;22m[INFO]  [39;1msnarkJS[0m: EXPORT VERIFICATION KEY STARTED
 [32;22m[INFO]  [39;1msnarkJS[0m: > Detected protocol: groth16
 [32;22m[INFO]  [39;1msnarkJS[0m: EXPORT VERIFICATION KEY FINISHED
