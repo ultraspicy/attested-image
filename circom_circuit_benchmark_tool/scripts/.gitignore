@@ -1,1 +1,2 @@
-output/compiled_circuit/*
+output/compiled_circuit/compiled_diff_square_sum/diff_square_sum.r1cs
+output/compiled_circuit/compiled_diff_square_sum/diff_square_sum.sym
