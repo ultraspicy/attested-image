@@ -31,7 +31,7 @@ def benchmark_circuit(circuit_name, input_path, pot_path, verbose=True, time = T
         #    'PROVER_TIME':t_p,
         #    'PROVER_MEMORY':m_p,
         #    'VER
-        # IFIER_TIME':t_v,
+        # -IFIER_TIME':t_v,
         #    'VERIFIER_MEMORY':m_v
            }
 
