@@ -27,16 +27,16 @@ cd output/compiled_circuit/compiled_${CIRCOM_FILENAME}/${CIRCOM_FILENAME}_js
 
 #echo "Witness generated [${CIRCOM_FILENAME}_witness.wtns]"
 
-# start a new "powers of tau" ceremony
-echo "==================== Start a new "powers of tau" ceremony: ...  ====================" >&2
-cd ..
-/usr/bin/time snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
+# # start a new "powers of tau" ceremony
+# echo "==================== Start a new "powers of tau" ceremony: ...  ====================" >&2
+# cd ..
+# /usr/bin/time snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
 
-echo "==================== contribute to the ceremony: ...  ====================" >&2
-/usr/bin/time echo "cs251" | snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
+# echo "==================== contribute to the ceremony: ...  ====================" >&2
+# /usr/bin/time echo "cs251" | snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
 
-echo "==================== PHASE2 ...  ====================" >&2
-/usr/bin/time snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
+# echo "==================== PHASE2 ...  ====================" >&2
+# /usr/bin/time snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
 
 echo "==================== generate verification file  ...  ====================" >&2
 /usr/bin/time snarkjs groth16 setup ${CIRCOM_FILENAME}.r1cs pot12_final.ptau ${CIRCOM_FILENAME}_0000.zkey
