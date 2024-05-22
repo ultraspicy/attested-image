@@ -40,10 +40,10 @@ def decompose_video_to_frames(video_path, output_folder):
     print("Done. Extracted {} frames.".format(frame_count))
 
 # decompose original and edited video into series of pictures
-original_video_path = './../resources/sample.mp4'  
+original_video_path = './../resources/original.mp4'  
 output_folder = './extracted_frames_original'    
 decompose_video_to_frames(original_video_path, output_folder)
 
-edited_video_path = './../resources/output.mp4'  
-output_folder = './extracted_frames_edit'    
+edited_video_path = './../resources/edited.mp4'  
+output_folder = './extracted_frames_edited'    
 decompose_video_to_frames(edited_video_path, output_folder)

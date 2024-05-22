@@ -9,13 +9,20 @@ pip install Pillow
 '''
 import json
 from PIL import Image
+import os
 
 def serialize_image_to_json(image_path, output_json_path):
+
+    output_dir = os.path.dirname(output_json_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     # Open the image file
     with Image.open(image_path) as img:
         img = img.convert('RGB')  # Ensure image is in RGB format
         pixels = list(img.getdata())  # Get all pixels from the image
         width, height = img.size
+        print(f"the size of this image, width = {width}, height = {height}")
         
         # Organize pixels into a 2D array (list of lists)
         # pixel_data = []
@@ -42,8 +49,10 @@ def main():
     output_json_path = sys.argv[2]
     serialize_image_to_json(image_path, output_json_path)
 
+# only serialize the first frame of original/edited video for unit test
 def unit_test():
-    serialize_image_to_json('./../resources/output_frames/frame1.png', 'test_frame1_seri.json' )
+    serialize_image_to_json('./extracted_frames_original/frame_0000.jpg', './serialized_frames_original/frame_0000.json' )
+    serialize_image_to_json('./extracted_frames_edited/frame_0000.jpg', './serialized_frames_edited/frame_0000.json' )
 
 if __name__ == "__main__":
     # main()
