@@ -18,7 +18,7 @@ fn main() {
     let mut proof = SP1Prover::prove(ELF, stdin).expect("proving failed");
 
     // Read output.
-    let ret = proof.stdout.read::<u8>();
+    let ret = proof.stdout.read::<u32>();
     println!("ret: {}", ret);
     // Verify proof.
     SP1Verifier::verify(ELF, &proof).expect("verification failed");
