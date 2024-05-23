@@ -16,6 +16,5 @@ pgo-data.profdata
 **/proof-with-pis.json
 **/proof-with-io.json
 
-resources/
 python_scripts/extracted_frame_edit
 python_scripts/extracted_frame_original
