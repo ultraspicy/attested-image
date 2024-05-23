@@ -121,7 +121,7 @@ def unit_test():
     
     extract_json_snippet('./circuit_input/frame_0000_r.json',
                          './circuit_input/frame_0000_r_snippet.json',
-                         0, 1024)
+                         0, 1000)
 
 
 if __name__ == "__main__":
