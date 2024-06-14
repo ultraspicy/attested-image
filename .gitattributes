@@ -1,1 +1,7 @@
 *.json filter=lfs diff=lfs merge=lfs -text
+
+# *.json This is the pattern that matches all files with the .json extension.
+# filter=lfs This specifies that the lfs (Large File Storage) filter should be applied to these files. 
+# diff=lfs This tells Git to use the lfs diff driver for these files.
+# merge=lfs This specifies that Git should use the lfs merge driver for these files.
+# -text This unsets the text attribute, which means that these files should not be treated as text files by Git.
