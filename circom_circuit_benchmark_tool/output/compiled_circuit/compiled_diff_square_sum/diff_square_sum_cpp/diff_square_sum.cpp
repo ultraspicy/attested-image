@@ -23,15 +23,15 @@ NULL,
 NULL };
 uint get_main_input_signal_start() {return 2;}
 
-uint get_main_input_signal_no() {return 2048;}
+uint get_main_input_signal_no() {return 16384;}
 
-uint get_total_signal_no() {return 11264;}
+uint get_total_signal_no() {return 90112;}
 
-uint get_number_of_components() {return 2049;}
+uint get_number_of_components() {return 16385;}
 
 uint get_size_of_input_hashmap() {return 256;}
 
-uint get_size_of_witness() {return 3073;}
+uint get_size_of_witness() {return 24577;}
 
 uint get_size_of_constants() {return 6;}
 
@@ -154,10 +154,10 @@ void sumN_2_create(uint soffset,uint coffset,Circom_CalcWit* ctx,std::string com
 ctx->componentMemory[coffset].templateId = 2;
 ctx->componentMemory[coffset].templateName = "sumN";
 ctx->componentMemory[coffset].signalStart = soffset;
-ctx->componentMemory[coffset].inputCounter = 1024;
+ctx->componentMemory[coffset].inputCounter = 8192;
 ctx->componentMemory[coffset].componentName = componentName;
 ctx->componentMemory[coffset].idFather = componentFather;
-ctx->componentMemory[coffset].subcomponents = new uint[1023]{0};
+ctx->componentMemory[coffset].subcomponents = new uint[8191]{0};
 }
 
 void sumN_2_run(uint ctx_index,Circom_CalcWit* ctx){
@@ -184,9 +184,9 @@ Fr_copy(aux_dest,&circuitConstants[0]);
 {
 uint aux_create = 0;
 int aux_cmp_num = 0+ctx_index+1;
-uint csoffset = mySignalStart+1025;
-uint aux_dimensions[1] = {1023};
-for (uint i = 0; i < 1023; i++) {
+uint csoffset = mySignalStart+8193;
+uint aux_dimensions[1] = {8191};
+for (uint i = 0; i < 8191; i++) {
 std::string new_cmp_name = "comp"+ctx->generate_position_array(aux_dimensions, 1, i);
 sum2_1_create(csoffset,aux_cmp_num,ctx,new_cmp_name,myId);
 mySubcomponents[aux_create+i] = aux_cmp_num;
@@ -288,9 +288,9 @@ Fr_lt(&expaux[0],&lvar[1],&circuitConstants[4]); // line circom 37
 PFrElement aux_dest = &signalValues[mySignalStart + 0];
 // load src
 // end load src
-Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[1022]].signalStart + 0]);
+Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[8190]].signalStart + 0]);
 }
-for (uint i = 0; i < 1023; i++){
+for (uint i = 0; i < 8191; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
 if (index_subc != 0)release_memory_component(ctx,index_subc);
 }
@@ -300,10 +300,10 @@ void SquareRootSum_3_create(uint soffset,uint coffset,Circom_CalcWit* ctx,std::s
 ctx->componentMemory[coffset].templateId = 3;
 ctx->componentMemory[coffset].templateName = "SquareRootSum";
 ctx->componentMemory[coffset].signalStart = soffset;
-ctx->componentMemory[coffset].inputCounter = 2048;
+ctx->componentMemory[coffset].inputCounter = 16384;
 ctx->componentMemory[coffset].componentName = componentName;
 ctx->componentMemory[coffset].idFather = componentFather;
-ctx->componentMemory[coffset].subcomponents = new uint[1025]{0};
+ctx->componentMemory[coffset].subcomponents = new uint[8193]{0};
 }
 
 void SquareRootSum_3_run(uint ctx_index,Circom_CalcWit* ctx){
@@ -330,9 +330,9 @@ Fr_copy(aux_dest,&circuitConstants[0]);
 {
 uint aux_create = 0;
 int aux_cmp_num = 0+ctx_index+1;
-uint csoffset = mySignalStart+3073;
-uint aux_dimensions[1] = {1024};
-for (uint i = 0; i < 1024; i++) {
+uint csoffset = mySignalStart+24577;
+uint aux_dimensions[1] = {8192};
+for (uint i = 0; i < 8192; i++) {
 std::string new_cmp_name = "comdiffsquare"+ctx->generate_position_array(aux_dimensions, 1, i);
 DiffSquare_0_create(csoffset,aux_cmp_num,ctx,new_cmp_name,myId);
 mySubcomponents[aux_create+i] = aux_cmp_num;
@@ -341,15 +341,15 @@ aux_cmp_num += 1;
 }
 }
 {
-uint aux_create = 1024;
-int aux_cmp_num = 1024+ctx_index+1;
-uint csoffset = mySignalStart+7169;
+uint aux_create = 8192;
+int aux_cmp_num = 8192+ctx_index+1;
+uint csoffset = mySignalStart+57345;
 for (uint i = 0; i < 1; i++) {
 std::string new_cmp_name = "comsumn";
 sumN_2_create(csoffset,aux_cmp_num,ctx,new_cmp_name,myId);
 mySubcomponents[aux_create+i] = aux_cmp_num;
-csoffset += 4094 ;
-aux_cmp_num += 1024;
+csoffset += 32766 ;
+aux_cmp_num += 8192;
 }
 }
 {
@@ -397,7 +397,7 @@ uint cmp_index_ref = ((1 * Fr_toInt(&lvar[1])) + 0);
 PFrElement aux_dest = &ctx->signalValues[ctx->componentMemory[mySubcomponents[cmp_index_ref]].signalStart + 2];
 // load src
 // end load src
-Fr_copy(aux_dest,&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 1025)]);
+Fr_copy(aux_dest,&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 8193)]);
 }
 // run sub component if needed
 if(!(ctx->componentMemory[mySubcomponents[cmp_index_ref]].inputCounter -= 1)){
@@ -406,7 +406,7 @@ DiffSquare_0_run(mySubcomponents[cmp_index_ref],ctx);
 }
 }
 {
-PFrElement aux_dest = &signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 2049)];
+PFrElement aux_dest = &signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 16385)];
 // load src
 // end load src
 Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[1])) + 0)]].signalStart + 0]);
@@ -429,12 +429,12 @@ Fr_copy(aux_dest,&circuitConstants[1]);
 Fr_lt(&expaux[0],&lvar[1],&circuitConstants[0]); // line circom 66
 while(Fr_isTrue(&expaux[0])){
 {
-uint cmp_index_ref = 1024;
+uint cmp_index_ref = 8192;
 {
 PFrElement aux_dest = &ctx->signalValues[ctx->componentMemory[mySubcomponents[cmp_index_ref]].signalStart + ((1 * Fr_toInt(&lvar[1])) + 1)];
 // load src
 // end load src
-Fr_copy(aux_dest,&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 2049)]);
+Fr_copy(aux_dest,&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[1])) + 16385)]);
 }
 // run sub component if needed
 if(!(ctx->componentMemory[mySubcomponents[cmp_index_ref]].inputCounter -= 1)){
@@ -455,9 +455,9 @@ Fr_lt(&expaux[0],&lvar[1],&circuitConstants[0]); // line circom 66
 PFrElement aux_dest = &signalValues[mySignalStart + 0];
 // load src
 // end load src
-Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[1024]].signalStart + 0]);
+Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[8192]].signalStart + 0]);
 }
-for (uint i = 0; i < 1025; i++){
+for (uint i = 0; i < 8193; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
 if (index_subc != 0)release_memory_component(ctx,index_subc);
 }

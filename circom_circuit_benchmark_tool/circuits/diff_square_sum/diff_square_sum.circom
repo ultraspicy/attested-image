@@ -70,4 +70,4 @@ template SquareRootSum(n) {
 
 }
 
-component main = SquareRootSum(1024);
+component main = SquareRootSum(8192);
