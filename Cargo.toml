@@ -1,2 +1,2 @@
 [workspace]
-members = ["range_check"]
+members = ["range_check/permutation_check"]
