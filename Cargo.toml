@@ -1,2 +1,5 @@
 [workspace]
-members = ["range_check/permutation_check"]
+members = [ 
+    "range_check/adjacency_check",
+    "range_check/permutation_check"
+    ]

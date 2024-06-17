@@ -10,7 +10,7 @@ use std::time::Instant;
 
 fn main() -> Result<()> {
     //
-    // STEP1: circuit setup and data preparation
+    // STEP1: boilerplate code of circuit setup and data preparation
     const D: usize = 2;
     // PoseidonGoldilocksConfig provides poseidon hash function and the Goldilocks field.
     // C is type alias for PoseidonGoldilocksConfig. 
@@ -20,18 +20,14 @@ fn main() -> Result<()> {
     let config: CircuitConfig = CircuitConfig::standard_recursion_config();
     let mut builder = CircuitBuilder::<F, D>::new(config);
 
-    let vec1: Vec<u64> = util::read_vector_from_file("resources/vec1.txt")?;
-    let vec1_field: Vec<F> = vec1.iter()
-                                                 .map(|&x| F::from_canonical_u64(x))
-                                                 .collect();
-    let vec2: Vec<u64> = util::read_vector_from_file("resources/vec2.txt")?;
-    let vec2_field: Vec<F> = vec2.iter()
+    let vec: Vec<u64> = util::read_vector_from_file("resources/vec1.txt")?;
+    let vec_field: Vec<F> = vec.iter()
                                                  .map(|&x| F::from_canonical_u64(x))
                                                  .collect();
 
     //
-    // STEP2: build the circuit by adding constraints of checking permutation  
-    // The public statement is "I know two vectors, one is the permutation of another"
+    // STEP2: build the circuit by adding constraints of checking adjacency
+    // The public statement is "I have a vector, that aftering sorted, the adjacent element "
     // The secret witness is the vecs, which generate the proof and are hidden from public
     // 
     // NOTE: this is an inefficient implement of permutation check 
@@ -57,6 +53,7 @@ fn main() -> Result<()> {
         builder.connect(value1_field, value2_field);
     }
 
+    // boilerplate code for benchmark, prove and verify
     let start_build = Instant::now();
     let data = builder.build::<C>();
     let build_duration = start_build.elapsed();
