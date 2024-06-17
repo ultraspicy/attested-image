@@ -9,12 +9,16 @@ use plonky2::plonk::config::{GenericConfig, PoseidonGoldilocksConfig};
 use std::collections::HashMap;
 
 fn main() -> Result<()> {
-    // circuit setup and data preparation
-    
+    ///
+    /// STEP1: circuit setup and data preparation
+    /// 
     const D: usize = 2;
-    type C = PoseidonGoldilocksConfig;
+    // PoseidonGoldilocksConfig provides poseidon hash function and the Goldilocks field.
+    // C is type alias for PoseidonGoldilocksConfig. 
+    type C = PoseidonGoldilocksConfig; 
     type F = <C as GenericConfig<D>>::F;
-    let config = CircuitConfig::standard_recursion_config();
+    // CircuitConfig defines number of gates, number of wires, and other parameters that dictate how the circuit is built and operates.
+    let config: CircuitConfig = CircuitConfig::standard_recursion_config();
     let mut builder = CircuitBuilder::<F, D>::new(config);
 
     // we hardcode vec1 and vec2 for now. It should be modified 
@@ -28,19 +32,29 @@ fn main() -> Result<()> {
                                                  .map(|&x| F::from_canonical_u64(x))
                                                  .collect();
 
-    // Calculate element counts for both vectors
+    ///
+    /// STEP2: build the circuit by adding constraints of checking permutation  
+    /// 
+                                                
+    // we check permutation by comparing (val, freq) pair
     let count1 = count_elements(&vec1_field);
-    let count2 = count_elements(&vec1_field);
+    let count2 = count_elements(&vec2_field);
 
-    // Check if both vectors have the same elements with the same frequencies
     for (key, &value1) in &count1 {
         let value2 = *count2.get(key).unwrap_or(&0);
 
         let value1_field = builder.constant(F::from_canonical_usize(value1));
         let value2_field = builder.constant(F::from_canonical_usize(value2));
 
-        // is_equal checks whether `x` and `y` are equal and outputs the boolean result.
-        builder.is_equal(value1_field, value2_field);
+        builder.connect(value1_field, value2_field);
+    }
+    for (key, &value2) in &count2 {
+        let value1 = *count1.get(key).unwrap_or(&0);
+
+        let value1_field = builder.constant(F::from_canonical_usize(value1));
+        let value2_field = builder.constant(F::from_canonical_usize(value2));
+
+        builder.connect(value1_field, value2_field);
     }
 
     let pw = PartialWitness::new();
@@ -67,15 +81,3 @@ fn count_elements<F: Field>(vec: &Vec<F>) -> HashMap<F, usize> {
     counts
 }
 
-// fn generate_proof<F: Field>(builder: CircuitBuilder<F>) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
-//     let prover = Prover::new(builder);
-//     let proof = prover.prove()?;
-//     Ok(proof)
-// }
-
-
-// fn verify_proof<F: Field>(proof: Vec<u8>, builder: CircuitBuilder<F>) -> Result<bool, Box<dyn std::error::Error>> {
-//     let verifier = Verifier::new(builder);
-//     let is_valid = verifier.verify(&proof)?;
-//     Ok(is_valid)
-// }
