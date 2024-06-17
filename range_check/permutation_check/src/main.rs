@@ -34,6 +34,10 @@ fn main() -> Result<()> {
 
     ///
     /// STEP2: build the circuit by adding constraints of checking permutation  
+    /// The public statement is "I know two vectors, one is the permutation of another"
+    /// The secret witness is the vecs, which generate the proof and are hidden from public
+    /// 
+    /// NOTE: this is an inefficient implement of permutation check
     /// 
                                                 
     // we check permutation by comparing (val, freq) pair
