@@ -1,12 +1,13 @@
 mod util;
 
 use anyhow::Result;
-use plonky2::field::types::Field;
+use plonky2::field::types::{Field, PrimeField64};
 use plonky2::iop::witness::PartialWitness;
 use plonky2::plonk::circuit_builder::CircuitBuilder;
 use plonky2::plonk::circuit_data::CircuitConfig;
 use plonky2::plonk::config::{GenericConfig, PoseidonGoldilocksConfig};
 use std::time::Instant;
+use plonky2::iop::target::Target;
 
 fn main() -> Result<()> {
     //
@@ -29,28 +30,33 @@ fn main() -> Result<()> {
     // STEP2: build the circuit by adding constraints of checking adjacency
     // The public statement is "I have a vector, that aftering sorted, the adjacent element "
     // The secret witness is the vecs, which generate the proof and are hidden from public
-    // 
-    // NOTE: this is an inefficient implement of permutation check 
+    //
                                                 
-    // we check permutation by comparing (val, freq) pair
-    let count1 = util::count_elements(&vec1_field);
-    let count2 = util::count_elements(&vec2_field);
+    // Convert field elements to a type that supports sorting
+    let mut vec_sorted: Vec<u64> = vec_field.iter().map(|&x| x.to_canonical_u64()).collect();
+    vec_sorted.sort();
 
-    for (key, &value1) in &count1 {
-        let value2 = *count2.get(key).unwrap_or(&0);
+    // Convert sorted elements back to field elements
+    let sorted_vec_field: Vec<F> = vec_sorted.iter().map(|&x| F::from_canonical_u64(x)).collect();
+    // Convert sorted elements to Targets
+    let sorted_vec_targets: Vec<Target> = sorted_vec_field.iter().map(|&x| builder.constant(x)).collect();
 
-        let value1_field = builder.constant(F::from_canonical_usize(value1));
-        let value2_field = builder.constant(F::from_canonical_usize(value2));
+    // Check adjacent elements differ by 0 or 1
+    // NOTE: didn't find a succinct way to check boolean, so the BoolTarget 
+    // is converted to a numeric Target
+    for i in 0..sorted_vec_field.len() - 1 {
+        let diff = builder.sub(sorted_vec_targets[i + 1], sorted_vec_targets[i]);
+        let zero = builder.zero();
+        let one = builder.one();
+        let diff_zero = builder.is_equal(diff, zero);
+        let diff_one = builder.is_equal(diff, one);
 
-        builder.connect(value1_field, value2_field);
-    }
-    for (key, &value2) in &count2 {
-        let value1 = *count1.get(key).unwrap_or(&0);
+        // Convert boolean targets to numerical targets
+        let diff_zero_num = builder.select(diff_zero, one, zero);
+        let diff_one_num = builder.select(diff_one, one, zero);
 
-        let value1_field = builder.constant(F::from_canonical_usize(value1));
-        let value2_field = builder.constant(F::from_canonical_usize(value2));
-
-        builder.connect(value1_field, value2_field);
+        let diff_valid = builder.add(diff_zero_num, diff_one_num);
+        builder.connect(diff_valid, one);
     }
 
     // boilerplate code for benchmark, prove and verify
