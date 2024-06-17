@@ -2,16 +2,14 @@ mod util;
 
 use anyhow::Result;
 use plonky2::field::types::Field;
-use plonky2::iop::witness::{PartialWitness, WitnessWrite};
+use plonky2::iop::witness::PartialWitness;
 use plonky2::plonk::circuit_builder::CircuitBuilder;
 use plonky2::plonk::circuit_data::CircuitConfig;
 use plonky2::plonk::config::{GenericConfig, PoseidonGoldilocksConfig};
-use std::collections::HashMap;
 
 fn main() -> Result<()> {
-    ///
-    /// STEP1: circuit setup and data preparation
-    /// 
+    //
+    // STEP1: circuit setup and data preparation
     const D: usize = 2;
     // PoseidonGoldilocksConfig provides poseidon hash function and the Goldilocks field.
     // C is type alias for PoseidonGoldilocksConfig. 
@@ -23,26 +21,25 @@ fn main() -> Result<()> {
 
     // we hardcode vec1 and vec2 for now. It should be modified 
     // to load vec1, vec2 from file 
-    let vec1: Vec<u64> = vec![1, 2, 3, 4, 10];
+    let vec1: Vec<u64> = util::read_vector_from_file("resources/vec1.txt")?;
     let vec1_field: Vec<F> = vec1.iter()
                                                  .map(|&x| F::from_canonical_u64(x))
                                                  .collect();
-    let vec2: Vec<u64> = vec![10, 4, 3, 2, 1];
+    let vec2: Vec<u64> = util::read_vector_from_file("resources/vec2.txt")?;
     let vec2_field: Vec<F> = vec2.iter()
                                                  .map(|&x| F::from_canonical_u64(x))
                                                  .collect();
 
-    ///
-    /// STEP2: build the circuit by adding constraints of checking permutation  
-    /// The public statement is "I know two vectors, one is the permutation of another"
-    /// The secret witness is the vecs, which generate the proof and are hidden from public
-    /// 
-    /// NOTE: this is an inefficient implement of permutation check
-    /// 
+    //
+    // STEP2: build the circuit by adding constraints of checking permutation  
+    // The public statement is "I know two vectors, one is the permutation of another"
+    // The secret witness is the vecs, which generate the proof and are hidden from public
+    // 
+    // NOTE: this is an inefficient implement of permutation check 
                                                 
     // we check permutation by comparing (val, freq) pair
-    let count1 = count_elements(&vec1_field);
-    let count2 = count_elements(&vec2_field);
+    let count1 = util::count_elements(&vec1_field);
+    let count2 = util::count_elements(&vec2_field);
 
     for (key, &value1) in &count1 {
         let value2 = *count2.get(key).unwrap_or(&0);
@@ -75,13 +72,5 @@ fn main() -> Result<()> {
 
     Ok(())
 
-}
-
-fn count_elements<F: Field>(vec: &Vec<F>) -> HashMap<F, usize> {
-    let mut counts = HashMap::new();
-    for &elem in vec {
-        *counts.entry(elem).or_insert(0) += 1;
-    }
-    counts
 }
 
