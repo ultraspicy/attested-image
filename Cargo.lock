@@ -144,6 +144,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "head_tail_check"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "plonky2",
+]
+
+[[package]]
 name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
