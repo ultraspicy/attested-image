@@ -21,22 +21,54 @@ fn main() -> Result<()> {
     let config: CircuitConfig = CircuitConfig::standard_recursion_config();
     let mut builder = CircuitBuilder::<F, D>::new(config);
 
+    // todo: set target later so the range is part of the public statement
     let range = builder.add_virtual_target();
+    let field_modulus: u64 = 18446744069414584321; // (1u64 << 64) - (1u64 << 32) + 1;
 
-    // load data from file and add them onto Goldilocks field
+    // load data from file and load them onto Goldilocks field
     let vec: Vec<i64> = util::read_vector_from_file("resources/vec1.txt")?;
     let vec_field: Vec<F> = vec.iter().map(|&x| {
         if x >= 0 {
             F::from_canonical_u64(x as u64)
         } else {
-            let field_modulus = (1u64 << 64) - (1u64 << 32) + 1;
+
             F::from_canonical_u64((field_modulus as i64 + x) as u64)
         }
     }).collect();
 
-    builder.range_check(value, log_max);
+    // Bound values
+    // todo convert target into number
+    let lower_bound = -10i64;
+    let upper_bound = 10i64;
 
-    
+    // Convert valid values to field elements
+    let valid_values: Vec<F> = (lower_bound..=upper_bound)
+        .map(|x| {
+            if x >= 0 {
+                F::from_canonical_u64(x as u64)
+            } else {
+                F::from_canonical_u64((field_modulus as i64 + x) as u64)
+            }
+        })
+        .collect();
+
+    let valid_value_targets: Vec<Target> = valid_values.iter().map(|&x| builder.constant(x)).collect();
+
+    // STEP2: Build the circuit by adding constraints to check the range
+    for &value in &vec_field {
+        let value_target = builder.constant(value);
+        let mut any_valid = builder.zero();
+        let one = builder.one();
+        let zero  = builder.zero();
+        
+        for &valid_target in &valid_value_targets {
+            let is_equal = builder.is_equal(value_target, valid_target);
+            let is_valid = builder.select(is_equal, one, zero);
+            any_valid = builder.add(any_valid, is_valid);
+        }
+
+        builder.connect(any_valid, one);
+    }
 
     // boilerplate code for benchmark, prove and verify
     let start_build = Instant::now();
