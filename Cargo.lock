@@ -159,6 +159,15 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "itertools"
+version = "0.10.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473"
+dependencies = [
+ "either",
+]
+
+[[package]]
+name = "itertools"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1c173a5686ce8bfa551b3563d0c2170bf24ca44da99c7ca4bfdab5418c3fe57"
@@ -296,7 +305,7 @@ dependencies = [
  "anyhow",
  "getrandom",
  "hashbrown",
- "itertools",
+ "itertools 0.11.0",
  "keccak-hash",
  "log",
  "num",
@@ -318,7 +327,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3a1dca60ad900d81b1fe2df3d0b88d43345988e2935e6709176e96573f4bcf5d"
 dependencies = [
  "anyhow",
- "itertools",
+ "itertools 0.11.0",
  "num",
  "plonky2_util",
  "rand",
@@ -347,6 +356,8 @@ name = "polynomial_permutation_check"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "itertools 0.10.5",
+ "log",
  "plonky2",
  "rand",
 ]
