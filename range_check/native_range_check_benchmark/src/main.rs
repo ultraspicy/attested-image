@@ -18,7 +18,7 @@ fn main() -> Result<()> {
     let mut builder = CircuitBuilder::<F, D>::new(config);
 
     // The list of secret values.
-    let values: Vec<usize> = util::read_vector_from_file("resources/vec1.txt")?;
+    let values: Vec<usize> = util::read_vector_from_file("resources/gen_1000.txt")?;
 
     let log_max = 6;
     let mut targets = Vec::new();

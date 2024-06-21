@@ -1,6 +1,6 @@
 '''
 Usage:
-    python generate_random_list.py <length> <start_range> <end_range> <filename>
+    python3 generate_random_list.py <length> <start_range> <end_range> <filename>
 '''
 import random
 import argparse
