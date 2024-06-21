@@ -1,6 +1,9 @@
 [workspace]
 members = [ 
-    "range_check/adjacency_check", "range_check/head_tail_check",
-    "range_check/permutation_check"
+    "range_check/adjacency_check", 
+    "range_check/head_tail_check", 
+    "range_check/native_range_check_benchmark",
+    "range_check/permutation_check",
+     "range_check/permutation_check"
     ]
 

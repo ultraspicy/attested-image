@@ -1,0 +1,8 @@
+[package]
+name = "native_range_check_benchmark"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+plonky2 = "0.2.2"
+anyhow = "1.0.86"
