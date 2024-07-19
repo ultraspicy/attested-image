@@ -138,8 +138,35 @@ fn main() {
     assert!(r_w.is_zero());
 
     let mut values_vec_1 = Vec::new();
-    values_vec_1.push(w_prod);
+    values_vec_1.push(w_prod); // prove that we construct the w honestly
     values_vec_1.push(q_w);
+
+
+    let mut v_prod_vals = Vec::new(); // v_prod_vals = [1, (pixel_0 + gamma), [(pixel_0 + gamma)(pixel_1 + gamma)],...,[(pixel_0 + gamma)...(pixel_{D-1} + gamma)]]
+    let mut product = F::ONE;
+    v_prod_vals.push(product);
+
+    for i in 0..PIXELS {
+        let pixel_in_fr = GoldilocksField(i as u64);
+        product *= pixel_in_fr + gamma;
+        v_prod_vals.push(product)
+    }
+    for _ in 0..DEGREE - PIXELS - 1 {
+        product *= gamma;
+        v_prod_vals.push(product);
+    }
+    let mut v_prod_omega_vals = Vec::new(); // v_prod_omega_vals = [(pixel_0 + gamma), [(pixel_0 + gamma)(pixel_1 + gamma)],...,[(pixel_0 + gamma)...(pixel_{D-1} + gamma)], 1]
+    for i in 1..v_prod_vals.len() {
+        v_prod_omega_vals.push(v_prod_vals[i]);
+    }
+    v_prod_omega_vals.push(v_prod_vals[0]);
+    let v_prod = PolynomialValues::from(v_prod_vals).ifft();
+    let v_prod_omega = PolynomialValues::from(v_prod_omega_vals).ifft();
+
+    // q_v[X] = (v_prod[omega * X] - (v_prod[X] * (gamma + v[X]))) * n_1[X] / Z_H[X]
+    let (q_v, r_v) = (&(&v_prod_omega - &(&v_prod * &(&gamma_poly + &v))) * &n_1).div_rem(&vanishing_poly);
+    assert!(r_v.is_zero());
+
 
 }
 
