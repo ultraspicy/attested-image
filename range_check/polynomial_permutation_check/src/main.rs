@@ -24,6 +24,7 @@ use plonky2::field::extension::FieldExtension;
 use plonky2::fri::proof::FriChallenges;
 use plonky2::hash::poseidon::PoseidonHash;
 use plonky2::field::fft::fft_root_table;
+use plonky2_maybe_rayon::MaybeParIter;
 
 static PIXELS : usize = 16; // assume a 16-pixel image
 static EXPONENT : u32 = 5; // each pixel can be 0..31
@@ -167,6 +168,156 @@ fn main() {
     let (q_v, r_v) = (&(&v_prod_omega - &(&v_prod * &(&gamma_poly + &v))) * &n_1).div_rem(&vanishing_poly);
     assert!(r_v.is_zero());
 
+    let mut z_prod_vals = Vec::new(); // z_prod_vals = [1, z_vals_0 + gamma, [(z_0 + gamma)(z_vals_1 + gamma)],...,[(z_vals_0 + gamma)...(z_vals_{PIXEL_RANGE + D - 1} + gamma)]]
+    let mut product = F::ONE;
+    z_prod_vals.push(product);
+    for i in 0..z_vals.len() - 1 {
+        product *= z_vals[i] + gamma;
+        z_prod_vals.push(product);
+    }
+    let mut z_prod_omega_vals = Vec::new();
+    for i in 1..z_prod_vals.len() {
+        z_prod_omega_vals.push(z_prod_vals[i]);
+    }
+    z_prod_omega_vals.push(z_prod_vals[0]);
+    // Range argument
+    // We want to prove for the z constructed above that:
+    //      (z[X] - z[omega*X])(1 - (z[X] - z[omega*X]) = 0 mod Z_H[X]
+    let mut z_omega_vals = Vec::new(); // z_omega_vals = [z_vals_0 + gamma,...,[(z_vals_0 + gamma)...(z_vals_{PIXEL_RANGE + D - 1} + gamma)], 1]
+    for i in 1..z_vals.len() {
+        z_omega_vals.push(z_vals[i]);
+    }
+    z_omega_vals.push(z_vals[0]);
+    let mut z_prod_omega_vals = Vec::new(); // z_prod_omega_vals = [z_vals_0 + gamma, [(z_vals_0 + gamma)(z_vals_1 + gamma)],...,[(z_vals_0 + gamma)...(z_vals_{PIXEL_RANGE + D - 1} + gamma)], 1]
+    for i in 1..z_prod_vals.len() {
+        z_prod_omega_vals.push(z_prod_vals[i]);
+    }
+    z_prod_omega_vals.push(z_prod_vals[0]);
+
+    let z_prod = PolynomialValues::from(z_prod_vals).ifft();
+    let z_prod_omega = PolynomialValues::from(z_prod_omega_vals).ifft();
+    let (q_z, r_z) = (&(&z_prod_omega - &(&z_prod * &(&gamma_poly + &z))) * &n_1).div_rem(&vanishing_poly);
+    assert!(r_z.is_zero());
+
+    let z_omega = PolynomialValues::from(z_omega_vals).ifft();
+    let mut one_coeffs = Vec::new();
+    one_coeffs.push(F::ONE);
+    
+    let one = PolynomialCoeffs::from(one_coeffs);
+    // by trisha
+    // bottleneck here :(
+    // q_range[X] = (z[X] - z[omega*X])(1 - (z[X] - z[omega*X]) * n_1[X] / Z_H[X]
+    let (mut q_range, r_range) = (&(&(&z_omega - &z) * &(&one - &(&z_omega - &z))) * &n_1).div_rem(&vanishing_poly);
+    
+    let mut challenger = Challenger::<F, <PoseidonGoldilocksConfig as GenericConfig<D>>::Hasher>::new();
+
+    challenger.observe_cap::<<PoseidonGoldilocksConfig as GenericConfig<D>>::Hasher>(&commit0.merkle_tree.cap);
+
+    let zeta = challenger.get_extension_challenge::<D>();
+    let g = <<PoseidonGoldilocksConfig as GenericConfig<D>>::F as Extendable<D>>::Extension::primitive_root_of_unity(degree_bits);
+    //assert!(zeta.exp_power_of_2(degree_bits) != <<PoseidonGoldilocksConfig as GenericConfig<D>>::F as Extendable<D>>::Extension::ONE);
+
+    let commit0_polys = FriPolynomialInfo::from_range(
+        0,
+        0..commit0.polynomials.len(),
+    );
+    let all_polys = [commit0_polys].concat();
+
+    let zeta_batch: FriBatchInfo<F, D> = FriBatchInfo {
+        point: zeta,
+        polynomials: all_polys.clone(),
+    };
+    // The Z polynomials are also opened at g * zeta.
+    let zeta_next = g * zeta;
+    let zeta_next_batch: FriBatchInfo<F, D> = FriBatchInfo {
+        point: zeta_next,
+        polynomials: all_polys.clone(),
+    };
+
+    let pixels = g.exp_u64((PIXELS) as u64);
+    let pixels_batch: FriBatchInfo<F, D> = FriBatchInfo {
+        point: pixels,
+        polynomials: all_polys.clone(),
+    };
+
+    let openings = vec![zeta_batch, zeta_next_batch, pixels_batch];
+    let fri_oracles = vec![
+            FriOracleInfo {
+                num_polys: commit0.polynomials.len(),
+                blinding: true,
+            }
+        ];
+    let instance = FriInstanceInfo {
+        oracles: fri_oracles,
+        batches: openings,
+    };
+
+    let fri_config = FriConfig {
+        rate_bits: rate_bits,
+        cap_height: cap_height,
+        proof_of_work_bits: 16,
+        reduction_strategy: FriReductionStrategy::ConstantArityBits(4, 5),
+        num_query_rounds: 28,
+    };
+
+    let mut challenger = Challenger::<F, <PoseidonGoldilocksConfig as GenericConfig<D>>::Hasher>::new();
+
+    let opening_proof = PolynomialBatch::<F, C, D>::prove_openings(
+        &instance,
+        &[
+            &commit0,
+        ],
+        &mut challenger,
+        &fri_config.fri_params(degree_bits, true),
+        &mut TimingTree::default(),
+    );
+    
+    // verifier
+    let mut challenger = Challenger::<F, <PoseidonGoldilocksConfig as GenericConfig<D>>::Hasher>::new();
+
+    let merkle_caps = &[
+        commit0.merkle_tree.cap.clone()
+    ];
+
+    let fri_challenges = challenger.fri_challenges::<C, D>(
+        &opening_proof.commit_phase_merkle_caps,
+        &opening_proof.final_poly,
+        opening_proof.pow_witness,
+        degree_bits,
+        &fri_config,
+    );
+
+    let eval_commitment = |z: <<PoseidonGoldilocksConfig as GenericConfig<D>>::F as Extendable<D>>::Extension, c: &PolynomialBatch<F, C, D>| {
+        c.polynomials
+            .par_iter()
+            .map(|p| p.to_extension::<D>().eval(z))
+            .collect::<Vec<_>>()   
+    };
+
+    let commit0_zeta_eval = eval_commitment(zeta, &commit0);
+    let commit0_zeta_next_eval = eval_commitment(zeta_next, &commit0);
+    let commit0_pixels_eval = eval_commitment(pixels, &commit0);
+    
+
+    let zeta_batch: FriOpeningBatch<F, D> = FriOpeningBatch {
+        values: [
+            commit0_zeta_eval.as_slice()
+        ].concat(),
+    };
+    
+    let fri_openings = FriOpenings {
+        batches: vec![zeta_batch],
+    };
+
+    let res = verify_fri_proof::<F, C, D>(
+        &instance,
+        &fri_openings,
+        &fri_challenges,
+        merkle_caps,
+        &opening_proof,
+        &fri_config.fri_params(degree_bits, true),
+    );
+    
 
 }
 
