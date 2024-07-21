@@ -1,6 +1,5 @@
 mod util;
 
-use anyhow::Result;
 use plonky2::field::extension::Extendable;
 use plonky2::field::goldilocks_field::GoldilocksField;
 use plonky2::field::types::Field;
@@ -31,26 +30,28 @@ static EXPONENT : u32 = 5; // each pixel can be 0..31
 static PIXEL_RANGE : i32 = 2_i32.pow(EXPONENT);
 static HASH_LENGTH : usize = 128;
 const D: usize = 2;
-// The max degree of polynomial
+// The max degree of polynomial, this value needs to be a power of 2 for IFFT
 const DEGREE : usize = 1 << 8;
 type C = PoseidonGoldilocksConfig; // PoseidonGoldilocksConfig provides poseidon hash function and the Goldilocks field.
 type F = <C as GenericConfig<D>>::F;
 
-fn main() {  
+// Function to evaluate a polynomial given by its coefficients at a point x
+fn evaluate_polynomial(coeffs: &[GoldilocksField], x: GoldilocksField) -> GoldilocksField {
+    coeffs.iter().rev().fold(GoldilocksField::ZERO, |acc, &coeff| acc * x + coeff)
+}
 
+fn main() {  
     // FRI commitment constants
     let rate_bits = 2;
     let cap_height = 4;
     let max_quotient_degree_factor = 4;
     let degree_bits = log2_strict(DEGREE);
     let omega = F::primitive_root_of_unity(degree_bits);
-
+    println!("omega = {:?}\n", omega);
     let max_fft_points = 1 << (degree_bits + max(rate_bits, log2_ceil(max_quotient_degree_factor)));
     let fft_root_table = fft_root_table(max_fft_points);
 
-
-    print!("{:?}", omega);
-
+    // vanishing polynomial 
     let mut vanishing_poly_coefficient = Vec::new();
     vanishing_poly_coefficient.push(F::ONE);
     for _ in 0..DEGREE - 1 {
@@ -62,27 +63,35 @@ fn main() {
     // z = v || w
     let mut z_vals_usize: Vec<usize> = Vec::new();
 
+    // w is the range of the pixel, typically from 0 to 255. We pad w 0 up to len of `DEGREE`
     // w_vals = [0, 1,...,PIXEL_RANGE - 1, 0, 0, ..., 0]
     // w.len() = degree
     let mut w_vals: Vec<_> = (0..PIXEL_RANGE).map(|i| GoldilocksField(i as u64)).collect();
     z_vals_usize.extend(0..PIXEL_RANGE as usize);
     w_vals.extend((0..DEGREE - PIXEL_RANGE as usize).map(|_| F::ZERO));
-    println!("{:?}", w_vals);
+    println!("w_val = {:?}\n", w_vals);
     let w = PolynomialValues::new(w_vals).ifft();
 
+    // sanity check
+    // let eval_omega_on_w = w.eval(F::ONE);
+    // println!("eval_omega_on_w = {:?}\n", eval_omega_on_w);
+
     // todo replace v_vals with actual image data
-    // v_vals = [0, 1,...,14, 15, 0, 0, ..., 0]
+    // v is the value read from the image
+    // ATM v_vals = [0, 1,...,14, 15, 0, 0, ..., 0], padded 0 up to len of `DEGREE`
     // v.len() = degree
     let mut v_vals: Vec<_> = (0..PIXELS).map(|i| GoldilocksField(i as u64)).collect();
     z_vals_usize.extend(0..PIXELS);
     v_vals.extend((0..DEGREE - PIXELS).map(|_| F::ZERO));
     println!("{:?}", v_vals);
     let v = PolynomialValues::new(v_vals).ifft();
-
+    // sanity check
+    // let eval_omega_on_v = v.eval(omega * omega * omega * omega * omega);
+    // println!("eval_omega_on_v = {:?}\n", eval_omega_on_v);
 
     z_vals_usize.extend((0..DEGREE - z_vals_usize.len()).map(|_|0));    
-    println!("{:?}", z_vals_usize);
     z_vals_usize.sort();
+    println!("z_vals_usize = {:?}", z_vals_usize);
     let z_vals: Vec<_> = z_vals_usize.into_iter().map(|i| GoldilocksField(i as u64)).collect();
     let z = PolynomialValues::new(z_vals.clone()).ifft();
 
@@ -94,11 +103,11 @@ fn main() {
 
     let commit0 = PolynomialBatch::<F, C, D>::from_coeffs(
         values_vec_0,
-        rate_bits,
+        rate_bits, // trade-off between proof size and computational efficiency.
         true,
-        cap_height,
+        cap_height, // try using the greatest-as-possible value to reduce the work of the verifier
         &mut TimingTree::default(),
-        Some(&fft_root_table),
+        Some(&fft_root_table), // pre-compute  [1, ω, ω^2, ω^3, ..., ω^(max_fft_points-1)] table instead of computing on the fly
     );
 
     // todo: make gamma a uniformly sampled r on the field

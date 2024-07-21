@@ -1,6 +1,7 @@
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
+use plonky2::field::goldilocks_field::GoldilocksField;
 
 pub fn read_vector_from_file(filename: &str) -> io::Result<Vec<usize>> {
     let path = Path::new(filename);
