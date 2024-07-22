@@ -212,6 +212,8 @@ fn main() {
     println!("z = {:?}\n", z);
     println!("z_vals = {:?}\n", z_vals);
     println!("z_omega_vals = {:?}\n", z_omega_vals);
+    println!("vanishing_poly = {:?}\n", vanishing_poly); 
+    
     
     let one = PolynomialCoeffs::from(vec![F::ONE]);
     // by trisha
