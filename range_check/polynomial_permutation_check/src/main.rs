@@ -91,8 +91,7 @@ fn main() {
     // let eval_omega_on_v = v.eval(omega * omega * omega * omega * omega);
     // println!("eval_omega_on_v = {:?}\n", eval_omega_on_v);
 
-    let mut rng = rand::thread_rng();
-    z_vals_usize.extend((0..DEGREE - z_vals_usize.len()).map(|_|rng.gen_range(0..32)));    
+    z_vals_usize.extend((0..DEGREE - z_vals_usize.len()).map(|_|0));    
     z_vals_usize.sort();
     println!("z_vals_usize = {:?}", z_vals_usize);
     let z_vals: Vec<_> = z_vals_usize.into_iter().map(|i| GoldilocksField(i as u64)).collect();
@@ -206,7 +205,7 @@ fn main() {
     println!("Degree of polynomial q_z: {}", q_z.clone().coeffs.len() - 1);
 
     let mut z_omega_vals = z_vals[1..].to_vec(); // z_omega_vals = [z_vals_0 + gamma,...,[(z_vals_0 + gamma)...(z_vals_{PIXEL_RANGE + D - 1} + gamma)], 1]
-    z_omega_vals.push(z_vals[0]);
+    z_omega_vals.push(z_vals.last().unwrap().clone()); // padding the last instead of z_vals[0]
     let z_omega = PolynomialValues::from(z_omega_vals.clone()).ifft();
     println!("z_omega = {:?}\n", z_omega);
     println!("z = {:?}\n", z);
@@ -220,11 +219,12 @@ fn main() {
     // bottleneck here :(
     // q_range[X] = (z[X] - z[omega*X])(1 - (z[X] - z[omega*X]) * n_1[X] / Z_H[X]
     // by jianfeng 
-    // the coeff of z_omega and z are the same, makeing degree of q_range 1 less than it should be.  
+    // the coeff of z_omega and z are the same, makeing degree of q_range 1 less than it should be. So we cannot include q_range in batch with other polys with d = DEGREE
+    // todo use a separate poly batch
     let (q_range, r_range) = (&(&(&z_omega - &z) * &(&one - &(&z_omega - &z))) * &n_1).div_rem(&vanishing_poly);
     //println!("z_val = {:?}\n", z_val);
     // println!("r_range = {:?}\n", r_range);
-    // assert!(r_range.is_zero());  // FAILS here
+    assert!(r_range.is_zero());  // FAILS here
     values_vec_1.push(q_range.clone());
     println!("Degree of polynomial q_range: {}", q_range.clone().coeffs.len() - 1);
 
