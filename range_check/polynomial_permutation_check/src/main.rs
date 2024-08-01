@@ -224,7 +224,7 @@ fn main() {
     let (q_range, r_range) = (&(&(&z_omega - &z) * &(&one - &(&z_omega - &z))) * &n_1).div_rem(&vanishing_poly);
     //println!("z_val = {:?}\n", z_val);
     // println!("r_range = {:?}\n", r_range);
-    assert!(r_range.is_zero());  // FAILS here
+    assert!(r_range.is_zero());  
     values_vec_1.push(q_range.clone());
     println!("Degree of polynomial q_range: {}", q_range.clone().coeffs.len() - 1);
 
