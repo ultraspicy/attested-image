@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def read_array_from_file(filename, width, height):
     with open(filename, 'r') as f:
@@ -56,7 +59,17 @@ def compare_arrays(arr1, arr2, name1, name2):
     plt.savefig(f"difference_histogram_{name1.lower()}_{name2.lower()}.png")
     plt.close()
     
+    # Create heatmap of differences
+    plt.figure(figsize=(12, 8))
+    sns.heatmap(abs_diff, cmap='coolwarm', cbar_kws={'label': 'Absolute Difference'})
+    plt.title(f"Heatmap of Differences ({name1} - {name2})")
+    plt.xlabel("X-axis")
+    plt.ylabel("Y-axis")
+    plt.savefig(f"difference_heatmap_{name1.lower()}_{name2.lower()}.png")
+    plt.close()
+    
     print(f"Histogram of differences saved as 'difference_histogram_{name1.lower()}_{name2.lower()}.png'")
+    print(f"Heatmap of differences saved as 'difference_heatmap_{name1.lower()}_{name2.lower()}.png'")
     print()
 
 def main():
