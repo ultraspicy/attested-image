@@ -21,3 +21,5 @@ python_scripts/extracted_frame_original
 
 # big files that blocked by git
 circuit_params/
+
+ffmpeg-7.0.1/
