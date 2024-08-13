@@ -6,14 +6,12 @@
 #include <libswscale/swscale.h>
 #include <math.h>
 
-#define FFMIN(a,b) ((a) < (b) ? (a) : (b))
-#define FFMAX(a,b) ((a) > (b) ? (a) : (b))
 #define SWS_FAST_BILINEAR     1
 #define SWS_BILINEAR          2
 #define SWS_BICUBIC           4
 
-#define FILTER_BITS 16 // fix point arithmetic
-#define FILTER_SCALE (1 << FILTER_BITS)
+#define FILTER_BITS 14
+#define FILTER_SCALE (1 << 14)
 
 typedef struct {
     int *filterPos;
@@ -45,7 +43,6 @@ static void free_context(Context *c) {
 
 static int init_filter(Context *c, int srcW, int dstW, int filterSize) {
     int i, j;
-    int fone = 1 << FILTER_BITS;
     c->filterPos = (int*)malloc(dstW * sizeof(int));
     c->filter = (int16_t*)malloc(dstW * filterSize * sizeof(int16_t));
     c->filterSize = filterSize;
@@ -53,23 +50,23 @@ static int init_filter(Context *c, int srcW, int dstW, int filterSize) {
     if (!c->filterPos || !c->filter)
         return -1;
 
-    int64_t xInc = (((int64_t)srcW << 16) / dstW + 1) >> 1;
+    int64_t xInc = (((int64_t)srcW << 16) / dstW + 1) >> 1; // scaling factor in 16.16 fix point
 
     for (i = 0; i < dstW; i++) {
         int64_t srcPos = ((int64_t)i * xInc) >> 16;
         int64_t xxInc = xInc & 0xffff;
-        int xx = xxInc * (1 << 14) / xInc;
+        int xx = xxInc * (1 << FILTER_BITS) / xInc;
 
         c->filterPos[i] = srcPos;
 
         for (j = 0; j < filterSize; j++) {
             int64_t coeff;
             if (j == 0) {
-                coeff = (1 << 30) - xx * (1 << 14);
+                coeff = (1 << FILTER_BITS) - xx ;
             } else {
-                coeff = xx * (1 << 14);
+                coeff = xx;
             }
-            c->filter[i * filterSize + j] = (int32_t)((coeff + (1 << 15)) >> 16);
+            c->filter[i * filterSize + j] = (int16_t)coeff;
         }
 
         // Normalize filter coefficients
@@ -91,11 +88,11 @@ static int init_filter(Context *c, int srcW, int dstW, int filterSize) {
 void resize_image(const uint8_t* input, uint8_t* output, 
                   int input_width, int input_height, 
                   int output_width, int output_height) {
-    SwsContext *c = custom_sws_alloc_context();
-    int filterSize = 2;  // for bilinear
+    Context *c = alloc_context();
+    int filterSize = SWS_BILINEAR;  // for bilinear
     
-    if (custom_initFilter(c, input_width, output_width, filterSize) < 0) {
-        custom_sws_alloc_context(c);
+    if (init_filter(c, input_width, output_width, filterSize) < 0) {
+        free_context(c);
         return;
     }
 
@@ -127,7 +124,7 @@ void resize_image(const uint8_t* input, uint8_t* output,
         }
     }
 
-    custom_sws_freeContext(c);
+    free_context(c);
 }
 
 // print image summary
