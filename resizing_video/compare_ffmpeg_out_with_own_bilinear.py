@@ -74,11 +74,11 @@ def compare_arrays(arr1, arr2, name1, name2):
 
 def main():
     # File paths and dimensions
-    original_file = "./sand_19201080_R_channel.txt"
+    original_file = "./sand_19201080_Y_channel.txt"
     original_width, original_height = 1920, 1080
     
-    ffmpeg_file = "./sand_480270_R_channel.txt"
-    bilinear_file = "./custom_bilinear_r.txt"
+    ffmpeg_file = "./sand_480270_Y_channel.txt"
+    bilinear_file = "./custom_bilinear_Y.txt"
     processed_width, processed_height = 480, 270 
     
     try:

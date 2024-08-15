@@ -17,14 +17,13 @@ typedef struct {
     int *filterPos;
     int16_t *filter;
     int filterSize;
-    int *xInc;
-} SwsContext;
 
-typedef struct {
-    int *filterPos;
-    int16_t *filter;
-    int filterSize;
-    int *xInc;
+    int *vLumFilterPos;
+    int16_t *vLumFilter;
+    int vLumFilterSize;
+
+    int dstW, dstH;
+    int srcW, srcH;
 } Context;
 
 static Context* alloc_context() {
@@ -32,11 +31,12 @@ static Context* alloc_context() {
     return c;
 }
 
-static void free_context(Context *c) {
+void free_context(Context *c) {
     if (c) {
         free(c->filterPos);
         free(c->filter);
-        free(c->xInc);
+        free(c->vLumFilterPos);
+        free(c->vLumFilter);
         free(c);
     }
 }
@@ -53,7 +53,7 @@ static int init_filter(Context *c, int srcW, int dstW, int filterSize) {
     int64_t xInc = (((int64_t)srcW << 16) / dstW + 1) >> 1; // scaling factor in 16.16 fix point
 
     for (i = 0; i < dstW; i++) {
-        int64_t srcPos = ((int64_t)i * xInc) >> 16;
+        int64_t srcPos = ((int64_t)i * xInc) >> 15;
         int64_t xxInc = xInc & 0xffff;
         int xx = xxInc * (1 << FILTER_BITS) / xInc;
 
@@ -85,47 +85,152 @@ static int init_filter(Context *c, int srcW, int dstW, int filterSize) {
     return 0;
 }
 
-void resize_image(const uint8_t* input, uint8_t* output, 
-                  int input_width, int input_height, 
-                  int output_width, int output_height) {
-    Context *c = alloc_context();
-    int filterSize = SWS_BILINEAR;  // for bilinear
+static void init_vfilter(Context *c, int srcH, int dstH, int filterSize) {
+    int i, j;
+    c->vLumFilterPos = (int*)malloc(dstH * sizeof(int));
+    c->vLumFilter = (int16_t*)malloc(dstH * filterSize * sizeof(int16_t));
+    c->vLumFilterSize = filterSize;
+
+    double scale = (double)srcH / dstH;
     
-    if (init_filter(c, input_width, output_width, filterSize) < 0) {
-        free_context(c);
-        return;
+    for (i = 0; i < dstH; i++) {
+        double center = (i + 0.5) * scale - 0.5;
+        int top = (int)ceil(center - filterSize / 2);
+        
+        c->vLumFilterPos[i] = top;
+        
+        for (j = 0; j < filterSize; j++) {
+            double weight = 1.0;
+            if (filterSize > 1)
+                weight = 1.0 - fabs((j - (center - top)) / (filterSize / 2.0));
+            c->vLumFilter[i * filterSize + j] = (int16_t)(weight * FILTER_SCALE);
+        }
+        
+        // Normalize filter coefficients
+        int sum = 0;
+        for (j = 0; j < filterSize; j++)
+            sum += c->vLumFilter[i * filterSize + j];
+        for (j = 0; j < filterSize; j++)
+            c->vLumFilter[i * filterSize + j] = c->vLumFilter[i * filterSize + j] * FILTER_SCALE / sum;
     }
+}
 
-    double scale_y = (double)input_height / output_height;
+Context* create_context(int srcW, int srcH, int dstW, int dstH) {
+    Context *c = (Context*)malloc(sizeof(Context));
+    if (!c) return NULL;
 
-    for (int i = 0; i < output_height; i++) {
-        int srcY = (int)(i * scale_y);
-        int nextY = FFMIN(srcY + 1, input_height - 1);
-        int wy = (int)((i * scale_y - srcY) * FILTER_SCALE + 0.5);
+    c->srcW = srcW;
+    c->srcH = srcH;
+    c->dstW = dstW;
+    c->dstH = dstH;
 
-        for (int j = 0; j < output_width; j++) {
-            int srcX = c->filterPos[j];
-            int16_t *filter = &c->filter[j * filterSize];
+    int filterSize = 4; 
+    init_filter(c, srcW, dstW, filterSize);
+    init_vfilter(c, srcH, dstH, filterSize);
 
-            int32_t val = 0;
-            for (int k = 0; k < filterSize; k++) {
-                int x = FFMIN(srcX + k, input_width - 1);
-                int coeff_x = filter[k];
-                
-                int pixel1 = input[srcY * input_width + x];
-                int pixel2 = input[nextY * input_width + x];
-                
-                int interpolated = (pixel1 * (FILTER_SCALE - wy) + pixel2 * wy) >> FILTER_BITS;
-                val += interpolated * coeff_x;
+    return c;
+}
+
+void scale_image(Context *c, const uint8_t *src, int srcStride,
+                 uint8_t *dst, int dstStride) {
+    int x, y, z;
+    int16_t *lumFilter = c->vLumFilter;
+    int *lumFilterPos = c->vLumFilterPos;
+    
+    uint8_t *tmp = (uint8_t*)malloc(c->dstW * c->srcH * sizeof(uint8_t));
+
+    // Horizontal scaling
+    for (y = 0; y < c->srcH; y++) {
+        for (x = 0; x < c->dstW; x++) {
+            int srcPos = c->filterPos[x];
+            int val = 0;
+            
+            for (z = 0; z < c->filterSize; z++) {
+                if (srcPos + z < c->srcW) {
+                    val += src[y * srcStride + srcPos + z] * c->filter[x * c->filterSize + z];
+                }
             }
-
-            val = (val + (1 << (FILTER_BITS - 1))) >> FILTER_BITS;
-            output[i * output_width + j] = FFMIN(FFMAX(val, 0), 255);
+            
+            tmp[y * c->dstW + x] = (val + (1 << (FILTER_BITS - 1))) >> FILTER_BITS;
         }
     }
 
+    // Vertical scaling
+    for (y = 0; y < c->dstH; y++) {
+        for (x = 0; x < c->dstW; x++) {
+            int srcPos = lumFilterPos[y];
+            int val = 0;
+            
+            for (z = 0; z < c->vLumFilterSize; z++) {
+                if (srcPos + z < c->srcH) {
+                    val += tmp[(srcPos + z) * c->dstW + x] * lumFilter[y * c->vLumFilterSize + z];
+                }
+            }
+            
+            dst[y * dstStride + x] = (val + (1 << (FILTER_BITS - 1))) >> FILTER_BITS;
+        }
+    }
+
+    free(tmp);
+}
+
+// version 1
+void resize_image(const uint8_t* input, uint8_t* output, 
+                  int input_width, int input_height, 
+                  int output_width, int output_height) {
+    Context *c = create_context(input_width, input_height, output_width, output_height);
+    if (!c) {
+        fprintf(stderr, "Failed to initialize Context\n");
+        return;
+    }
+
+    scale_image(c, input, input_width, output, output_width);
+
     free_context(c);
 }
+
+// version 0
+// void resize_image(const uint8_t* input, uint8_t* output, 
+//                   int input_width, int input_height, 
+//                   int output_width, int output_height) {
+//     Context *c = alloc_context();
+//     int filterSize = SWS_BILINEAR;  // for bilinear
+    
+//     if (init_filter(c, input_width, output_width, filterSize) < 0) {
+//         free_context(c);
+//         return;
+//     }
+
+//     double scale_y = (double)input_height / output_height;
+
+//     for (int i = 0; i < output_height; i++) {
+//         int srcY = (int)(i * scale_y);
+//         int nextY = FFMIN(srcY + 1, input_height - 1);
+//         int wy = (int)((i * scale_y - srcY) * FILTER_SCALE + 0.5);
+
+//         for (int j = 0; j < output_width; j++) {
+//             int srcX = c->filterPos[j];
+//             int16_t *filter = &c->filter[j * filterSize];
+
+//             int32_t val = 0;
+//             for (int k = 0; k < filterSize; k++) {
+//                 int x = FFMIN(srcX + k, input_width - 1);
+//                 int coeff_x = filter[k];
+                
+//                 int pixel1 = input[srcY * input_width + x];
+//                 int pixel2 = input[nextY * input_width + x];
+                
+//                 int interpolated = (pixel1 * (FILTER_SCALE - wy) + pixel2 * wy) >> FILTER_BITS;
+//                 val += interpolated * coeff_x;
+//             }
+
+//             val = (val + (1 << (FILTER_BITS - 1))) >> FILTER_BITS;
+//             output[i * output_width + j] = FFMIN(FFMAX(val, 0), 255);
+//         }
+//     }
+
+//     free_context(c);
+// }
 
 // print image summary
 void print_image_summary(int width, int height, const unsigned char* data) {
@@ -156,17 +261,6 @@ void print_data_sample(const unsigned char* data, int width, int height, int sam
     printf("\n");
 }
 
-// int main(int argc, char **argv) 
-// {
-//     uint8_t *src_data[4], *dst_data[4];
-//     int src_linesize[4], dst_linesize[4];
-//     int src_w = 320, src_h = 240, dst_w, dst_h;
-//     const char *dst_size = NULL;
-//     const char *dst_filename = NULL;
-//     FILE *dst_file;
-//     int dst_bufsize;
-//     struct SwsContext *sws_ctx;
-// }
 int main(int argc, char *argv[]) {
     if (argc != 7) {
         printf("Usage: %s <input_file> <input_width> <input_height> <output_file> <output_width> <output_height>\n", argv[0]);

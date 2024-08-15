@@ -36,30 +36,9 @@ Median value: 172.0
 Standard deviation: 71.02
 PSNR (wrt original): inf dB
 
-Summary for FFmpeg Output:
-Shape: (270, 480)
-Min value: 14
-Max value: 255
-Mean value: 156.96
-Median value: 173.0
-Standard deviation: 70.84
-PSNR (wrt original): 40.23 dB
+To compile from source, cd into ffmpeg fold and
+`brew install autoconf automake cmake git libtool pkg-config texi2html yasm nasm` 
+`./configure --enable-debug=3 --disable-optimizations --disable-stripping`
 
-Summary for Custom Bilinear Output:
-Shape: (270, 480)
-Min value: 10
-Max value: 255
-Mean value: 156.99
-Median value: 173.0
-Standard deviation: 71.01
-PSNR (wrt original): 42.98 dB
-
-Comparison between FFmpeg and Custom Bilinear:
-Mean absolute difference: 1.5314
-Median absolute difference: 1.0000
-Max absolute difference: 56.0000
-Standard deviation of difference: 2.3709
-Percentage of pixels with difference > 0: 73.63%
-Percentage of pixels with difference > 1: 38.39%
-Percentage of pixels with difference > 5: 2.40%
-```
+`make -j$(nproc)`
+`sudo make install`
