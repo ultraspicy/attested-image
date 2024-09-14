@@ -5,5 +5,6 @@ members = [
     "range_check/native_range_check_benchmark",
     "range_check/permutation_check",
     "range_check/permutation_check",
-    "range_check/polynomial_permutation_check"
+    "range_check/polynomial_permutation_check",
+    "resizing_video/resize_rust"
 ]

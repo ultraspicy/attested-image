@@ -95,6 +95,7 @@ impl Context {
 
             for j in 0..filter_size {
                 let weight = if filter_size > 1 {
+                    // weight = 1.0 - fabs((j - (center - top)) / (filterSize / 2.0));
                     1.0 - ((j as f64 - (center - top as f64)).abs() / (filter_size as f64 / 2.0))
                 } else {
                     1.0
@@ -102,6 +103,12 @@ impl Context {
                 self.v_lum_filter[i * filter_size + j] = (weight * FILTER_SCALE as f64) as i16;
             }
 
+            // Normalize filter coefficients
+            // int sum = 0;
+            // for (j = 0; j < filterSize; j++)
+            //     sum += c->vLumFilter[i * filterSize + j];
+            // for (j = 0; j < filterSize; j++)
+            //     c->vLumFilter[i * filterSize + j] = c->vLumFilter[i * filterSize + j] * FILTER_SCALE / sum;
             let sum: i32 = self.v_lum_filter[i * filter_size..(i + 1) * filter_size]
                 .iter()
                 .map(|&val| val as i32)

@@ -42,3 +42,9 @@ To compile from source, cd into ffmpeg fold and
 
 `make -j$(nproc)`
 `sudo make install`
+
+To compare the results from ffmpeg_out with own_bilinear, run the following
+```
+conda activate attested-image
+python3 compare_ffmpeg_out_with_own_bilinear.py
+```
